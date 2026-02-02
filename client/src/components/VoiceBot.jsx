@@ -18,7 +18,6 @@ function VoiceBot() {
   const [userText, setUserText] = useState("");
   const [botText, setBotText] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
   // const utteranceRef = useRef(null);
   React.useEffect(() => {
     window.speechSynthesis.getVoices();
@@ -57,18 +56,6 @@ function VoiceBot() {
     utterance.onerror = () => setIsSpeaking(false);
 
     synth.speak(utterance);
-  };
-
-  const pauseSpeech = () => {
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.pause();
-    }
-  };
-
-  const resumeSpeech = () => {
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
   };
 
   const startListening = () => {
