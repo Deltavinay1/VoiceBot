@@ -51,9 +51,10 @@ function VoiceBot() {
     utterance.pitch = 1.1; // lighter tone (less heavy)
     utterance.volume = 1;
 
-    utterance.onstart = () => setIsSpeaking(true);
-    utterance.onend = () => setIsSpeaking(false);
-    utterance.onerror = () => setIsSpeaking(false);
+    utterance.onstart = () => {};
+utterance.onend = () => {};
+utterance.onerror = () => {};
+
 
     synth.speak(utterance);
   };
